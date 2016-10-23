@@ -88,14 +88,14 @@
 				</div>
 				<div class="txt-wp">
 					<label> 性别：
-						<input id="gerden" name="gerden" type="radio" ><label>男</label>
-						<input id="gerden" name="gerden" type="radio" checked><label>女</label>
+						<input id="gender" name="gender" type="radio" ><label>男</label>
+						<input id="gender" name="gender" type="radio" checked><label>女</label>
 					</label>
 				</div>
 				<div class="txt-wp">
 					<label>
 					学历：
-						<select name="" id="">
+						<select name="edu" id="">
 							<option value="">大专</option>
 							<option value="">本科</option>
 							<option value="">研究生</option>
@@ -107,21 +107,25 @@
 						<label>介绍：</label>
 					</div>
 					<label>
-						<textarea name="" id="textarea" cols="30" rows="10"></textarea>
+						<textarea name="desc" id="textarea" cols="30" rows="10"></textarea>
 					</label>
 				</div>
 				<div class="txt-wp">
 						<label>爱好：</label>
 					<label>
-						<input id="checkbox"  type="checkbox">旅游
-						<input id="checkbox"  type="checkbox">音乐
-						<input id="checkbox"  type="checkbox">跑步
+						<input id="checkbox" name="hobbies[]" value="旅游" type="checkbox">旅游
+					</label>
+					<label>
+						<input id="checkbox" name="hobbies[]" value="音乐" type="checkbox">音乐
+					</label>
+					<label>	
+						<input id="checkbox" name="hobbies[]" value="跑步" type="checkbox">跑步
 					</label>
 				</div>
 				<div class="txt-wp">
 						<label>照片：</label>
 					<label>
-						<input id="ph"  type="file">
+						<input id="ph" name="pic" type="file">
 					</label>
 				</div>
 				<div>
