@@ -1,0 +1,26 @@
+.container {
+    background-color: #bce892;
+}
+
+/*.form {
+    margin:0 auto;
+    background-color: pink;
+}*/
+.txt-wp {
+    margin: 10px 0;
+}
+
+#textarea{
+    margin: -20px 50px 0;
+}
+
+.form-wp {
+    width: 500px;
+    padding :20px 40px;
+    margin:0 auto;
+    background-color: #b9e233;
+}
+
+#loBtn {
+    margin:20px 130px;
+}

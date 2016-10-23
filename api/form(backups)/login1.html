@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>用户登录</title>
+    <link rel="stylesheet" href="../js/lib/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/lib/css.css">
+	<style>
+		/*.container {
+			background-color: #bce892;
+		}*/
+
+		/*.form {
+			margin:0 auto;
+			background-color: pink;
+		}*/
+		/*.txt-wp {
+			margin: 10px 0;
+		}
+
+		#textarea{
+			margin: -20px 50px 0;
+		}
+
+		.form-wp {
+			width: 500px;
+			padding :20px 40px;
+			margin:0 auto;
+			background-color: #b9e233;
+		}
+*/
+		
+	</style>
+
+</head>
+<body>
+
+<!-- <div class="container">
+
+	<form role="form">
+		<div class="form-group">
+		<label for="exampleInputEmail1">邮箱</label>
+		<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+		</div>
+		<div class="form-group">
+		<label for="exampleInputPassword1">Password</label>
+		<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+		</div>
+		<div class="form-group">
+		<label for="exampleInputFile">File input</label>
+		<input type="file" id="exampleInputFile">
+		<p class="help-block">Example block-level help text here.</p>
+		</div>
+		<div class="checkbox">
+		<label>
+		  <input type="checkbox"> Check me out
+		</label>
+		</div>
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
+</div> -->
+
+
+	
+<!-- col-xs-12 col-sm-8 col-md-5 col-lg-12
+ -->
+
+<div class="container">
+	<div class="row">
+		<div class="form-wp">
+			<h2>用户注册页面</h2>
+			<!-- <hr> -->
+			<form class="form" action="../api/reg_login_insert.php" method="get" onsubmit="return checkForm();">
+				<div class="txt-wp">
+					<label>账号：
+						<input id="username" name="user" type="text">
+					</label>
+				</div>
+				<div class="txt-wp" >
+					<label for="">密码：
+						<input id="password" name="key" type="password">
+					</label>
+				</div>
+				<div class="txt-wp">
+					<label for="">邮箱：
+						<input id="email" type="text">
+					</label>
+				</div>
+				<div class="txt-wp">
+					<label> 性别：
+						<input id="gerden" name="gerden" type="radio" ><label>男</label>
+						<input id="gerden" name="gerden" type="radio" checked><label>女</label>
+					</label>
+				</div>
+
+				<div class="txt-wp">
+					<div class="">
+						<label>介绍：</label>
+					</div>
+					<label>
+						<textarea name="" id="textarea" cols="30" rows="10"></textarea>
+					</label>
+				</div>
+				<div class="txt-wp">
+						<label>爱好：</label>
+					<label>
+						<input id="checkbox"  type="checkbox">旅游
+						<input id="checkbox"  type="checkbox">音乐
+						<input id="checkbox"  type="checkbox">跑步
+					</label>
+				</div>
+				<div class="txt-wp">
+						<label>照片：</label>
+					<label>
+						<input id="ph"  type="file">
+					</label>
+				</div>
+				<div>
+					<input id="loBtn" type="submit" value="立即注册">
+				</div>
+				<div class="txt-wp"></div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+	<!-- <h1>用户登录</h1>
+	<hr>
+	<form action="../api/login_demo.php" method="post" onsubmit="return checkForm();">
+		<div>
+			账号：<input id="username" name="user" type="text">
+		</div>
+		<div>
+			密码：<input id="password" name="key" type="password">
+		</div>
+		<div>
+			<input id="loginBtn" type="submit" value="登录">
+			<input type="reset" value="清空">
+		</div>
+	</form> -->
+
+	<script src="../js/lib/jquery/dist/jquery.min.js"></script>
+	<script src="../js/lib/dist/js/bootstrap.min.js"></script>
+	<script>
+
+		// $('#loBtn').on('click',function(){
+		// 	location.href = "main.html"
+		// })
+
+		// function checkForm() {
+		// 	var $user = $('#username'),
+		// 		$pswd = $('#password');
+				
+		// 	if ($.trim($user.val()).length == 0) {
+		// 		alert('账号不能为空');
+		// 		$user.focus();
+		// 		return false;
+		// 	}
+			
+		// 	if ($.trim($pswd.val()).length == 0) {
+		// 		alert('密码不能为空');
+		// 		$pswd.focus();
+		// 		return false;
+		// 	}
+			
+		// 	return true;
+		// }
+	</script>
+</body>
+</html>

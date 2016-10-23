@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>用户登录</title>
+    <link rel="stylesheet" href="../js/lib/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/lib/css.css">
+
+	<style>
+		/*.txt-wp {
+			margin: 10px 0;
+		}*/
+
+		body {
+			background-color:#fff;
+		}
+	</style>
+</head>
+<body>
+
+
+<div class="container">
+	<div class="row">
+		<div class="form-wp">
+			<h1>用户登录</h1>
+			<!-- <hr> -->
+			<form action="../api/reg_login_enter.php" method="get" onsubmit="return checkForm();">
+				<div class="txt-wp">
+					<label>账号：
+						<input id="username" name="username" type="text">
+					</label>
+				</div>
+				<div>
+					<label for="">密码：
+						<input id="password" name="password" type="password">
+					</label>
+				</div>
+				<div>
+					<label for="">验证码：
+						<input id="" name="vcode" type="text">
+					</label>
+					<img title="点击刷新" src="vcode/captcha.php" align="absbottom" onclick="this.src='vcode/captcha.php?'+Math.random();">
+				</div>
+				<div>
+					<!-- <input type="button" id="register" name="" value="注册"> -->
+					<input id="loginBtn" type="submit" value="登录">
+					<input id="reset" type="reset" value="清空">
+				</div>
+
+
+			</form>
+		</div>
+	</div>
+</div>
+
+	<script src="../js/lib/jquery/dist/jquery.min.js"></script>
+	<script src="../js/lib/dist/js/bootstrap.min.js"></script>
+	<script>
+
+	function checkForm(){
+		var $username=$('#username'),
+			$password=$('#password')
+			$loginBtn=$("#loginBtn"),
+			$reset=$('#reset');
+
+			if($.trim($username.val()).length==0){
+				alert('账号不能为空');
+		 		$username.focus();
+		 		return false;
+			}
+
+			if($.trim($password.val()).length==0){
+				alert('密码不能为空');
+		 		$password.focus();
+		 		return false;
+			}
+
+		// $loginBtn.on('click',function(){
+		// 	location.href = "main.html"
+		// })
+
+		// $reset.on('click',function(){
+		// 	$username.focus();
+		// })
+
+	}
+	</script>
+
+	<!-- <h1>用户登录</h1>
+	<hr>
+	<form action="../api/login_demo.php" method="post" onsubmit="return checkForm();">
+		<div>
+			账号：<input id="username" name="user" type="text">
+		</div>
+		<div>
+			密码：<input id="password" name="key" type="password">
+		</div>
+		<div>
+			<input id="loginBtn" type="submit" value="登录">
+			<input type="reset" value="清空">
+		</div>
+	</form> -->
+
+	<!-- // <script src="../lib/jquery-1.12.1.min.js"></script>  -->
+	<!--<script>
+		function checkForm() {
+			var $user = $('#username'),
+				$pswd = $('#password');
+				
+			if ($.trim($user.val()).length == 0) {
+				alert('账号不能为空');
+				$user.focus();
+				return false;
+			}
+			
+			if ($.trim($pswd.val()).length == 0) {
+				alert('密码不能为空');
+				$pswd.focus();
+				return false;
+			}
+			
+			return true;
+		}
+	</script>-->
+	
+</body>
+</html>

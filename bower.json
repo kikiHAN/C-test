@@ -1,0 +1,24 @@
+{
+  "name": "bowertes",
+  "authors": [
+    "hanqiki <hanqiki@163.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "js/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "underscore": "^1.8.3",
+    "angular": "angularjs#^1.5.8"
+  }
+}
