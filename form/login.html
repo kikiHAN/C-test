@@ -93,12 +93,13 @@
 			location.href = "main.html"
 		})*/
 				// 多行文本限制
-		function textCounter(field,confield,maxlimit){
+		function textCounter(field,countF,maxnub){
 					//表单，文本元素，限制
-					if(field.value.length>maxlimit){ //字数大于最大按最大
-						field.value=field.value.substring(0,maxlimit);
+					if(field.value.length>maxnub){ //字数大于最大按最大
+						field.value=field.value.substring(0,maxnub);
+						alert('最多只能输50个字！');
 					} else {
-						confield.value=maxlimit-field.value.length;
+						countF.value=maxnub-field.value.length;
 					}
 				}
  			//表单验证
