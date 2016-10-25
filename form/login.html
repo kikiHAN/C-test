@@ -52,9 +52,9 @@
 						<label>介绍：</label>
 					</div>
 					<div>
-						<textarea id="textarea" name="desc"  cols="30" rows="10"  onKeyDown="textCounter(desc,nublen,50);" onKeyUp="textCounter(desc,nublen,50);"></textarea>
-						<span id="length">您还可以输入
-							<input id="num" name="nublen" type="text"  value="50" size="0" readonly="readonly">/50个字
+						<textarea id="desc" name="desc"  cols="30" rows="10"  onKeyDown="textCounter(desc,nublen,50);" onKeyUp="textCounter(desc,nublen,50);"></textarea>
+						<span id="length">已输入
+							<input id="num" name="nublen" type="text"  value="0" size="0" readonly="readonly">/50个字
 						</span>
 					</div>
 				</div>
@@ -102,15 +102,11 @@
 				// 多行文本限制
 		/*function textCounter(field,countF,maxnub){
 							//表单，文本元素，限制数
-					if(field.value.length==0){
-						alert('请输入介绍!');
-						$username.focus();
-						return false;
-					} else if(field.value.length>maxnub){ //字数大于最大按最大
+					if(field.value.length>maxnub){ //字数大于最大按最大
 								field.value=field.value.substring(0,maxnub);
 								alert('最多只能输50个字！');
 					} else {
-						countF.value=maxnub-field.value.length;//小于限制就显示剩余
+						countF.value=field.value.length;//小于限制就显示剩余
 					}
 				}*/
  			//表单验证
@@ -121,7 +117,7 @@
 				$email=$('#email'),
 				$gender=$('#gender'),
 				$edu=$('#edu'),
-				$textarea=$('#textarea'),
+				$desc=$('#desc'),
 				$hobbies=$('#hobbies input[type=checkbox]'),
 				$loginBtn=$("#loginBtn"),
 				$reset=$('#reset');
@@ -161,16 +157,14 @@
 					alert('请选择一个学历');
 					return false;
 				}
-
-				// console.log($hobbies)
-
 					//介绍
-				/*if($.trim($textarea.length>0)){
+				if($.trim($desc.val())==''){
 					alert('请输入介绍!');
-					$textarea.focus();
+					$desc.focus();
 					return false;
-				}*/
+				}
 					//爱好
+					// console.log($hobbies)
 				$.each($hobbies,function(i,itme){
 					if(itme.checked){//爱好被选择
 						hobbiesFlag = false;//返回false
@@ -189,10 +183,9 @@
 				 	if(field.value.length>maxnub){ //字数大于最大按最大
 								field.value=field.value.substring(0,maxnub);
 								alert('最多只能输50个字！');
-								return false;
 					} else {
-						countF.value=maxnub-field.value.length;//小于限制就显示剩余
-						// return false;
+						countF.value=field.value.length; //已输入的数
+						// countF.value=maxnub-field.value.length;//小于限制就显示剩余
 					}
 				}/**/
 
