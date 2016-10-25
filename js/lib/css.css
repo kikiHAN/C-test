@@ -11,7 +11,7 @@
 }
 
 #textarea{
-    margin: -20px 50px 0;
+    margin: -20px 20px 0 45px;
 }
 
 .form-wp {
@@ -22,7 +22,7 @@
 }
 
 #loBtn {
-    margin:20px 130px;
+    margin:20px 25px 20px 45px;
 }
 
 span#length>input {

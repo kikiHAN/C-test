@@ -30,10 +30,10 @@
         return;
     }*/
 
-    /*if (!empty($user)) {
+    if (!empty($user)) {
         echo '用户名已经被占用，请换一个试试！';
         return;
-    }*/
+    }
 
     // die; 
 

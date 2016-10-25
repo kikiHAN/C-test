@@ -15,12 +15,17 @@
     <title>用户管理</title>
     <link href="../js/lib/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        table.table th#th {
-            width: 70px;
-        }
-        
-        table.table th,td {
+        table.table th,th.th {
+            width: 100px;
             text-align: center;
+        }
+        table.table th.thF {
+             width: 100px;
+            text-align: center;
+        }
+
+        table.table td {
+            text-indext:-10px;
         }
     
     </style>
@@ -33,13 +38,13 @@
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover  ">
                 <tr>
-                    <th id="th">序号</th>
+                    <th class="th">序号</th>
                     <th>账号</th>
                     <th>邮箱</th>
-                    <th>性别</th>
-                    <th>学历</th>
-                    <th>介绍</th>
-                    <th>爱好</th>
+                    <th class="th">性别</th>
+                    <th class="th">学历</th>
+                    <th class="thF">介绍</th>
+                    <th class="thF">爱好</th>
                     <th></th>
                 </tr>
         
