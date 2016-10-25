@@ -52,7 +52,7 @@
 						<label>介绍：</label>
 					</div>
 					<div>
-						<textarea id="textarea" name="desc"  cols="30" rows="10"  onKeyDown="textCounter(desc,nublen,50);" onKeyUp="textCounter(desc,nublen,50);"></textarea>
+						<textarea id="textarea" name="desc"  cols="30" rows="10" value='0'  onKeyDown="textCounter(desc,nublen,50);" onKeyUp="textCounter(desc,nublen,50);"></textarea>
 						<span id="length">您还可以输入
 							<input id="num" name="nublen" type="text"  value="50" size="0" readonly="readonly">/50个字
 						</span>
@@ -78,6 +78,7 @@
 				</div>
 				<div>
 					<input id="loBtn" type="submit" value="立即注册">
+					<input id="return" type="submit" value="返回">
 				</div>
 				<div class="txt-wp"></div>
 			</form>
@@ -89,19 +90,29 @@
 	<script src="../js/lib/dist/js/bootstrap.min.js"></script>
 	<script>
 
+		$('#return').on('click',function(){
+			location.href="main1.html"
+			return false;
+		})
+
+
 		/*$('#loBtn').on('click',function(){
 			location.href = "main.html"
 		})*/
 				// 多行文本限制
-		function textCounter(field,countF,maxnub){
-					//表单，文本元素，限制
-					if(field.value.length>maxnub){ //字数大于最大按最大
-						field.value=field.value.substring(0,maxnub);
-						alert('最多只能输50个字！');
+		/*function textCounter(field,countF,maxnub){
+							//表单，文本元素，限制数
+					if(field.value.length==0){
+						alert('请输入介绍!');
+						$username.focus();
+						return false;
+					} else if(field.value.length>maxnub){ //字数大于最大按最大
+								field.value=field.value.substring(0,maxnub);
+								alert('最多只能输50个字！');
 					} else {
-						countF.value=maxnub-field.value.length;
+						countF.value=maxnub-field.value.length;//小于限制就显示剩余
 					}
-				}
+				}*/
  			//表单验证
 		function checkForm(){
 
@@ -110,6 +121,7 @@
 				$email=$('#email'),
 				$gender=$('#gender'),
 				$edu=$('#edu'),
+				$textarea=$('#textarea'),
 				$hobbies=$('#hobbies input[type=checkbox]'),
 				$loginBtn=$("#loginBtn"),
 				$reset=$('#reset');
@@ -136,7 +148,7 @@
 					alert('密码不能为空');
 			 		$password.focus();
 			 		return false;
-				}
+				}/**/
 
 						//邮箱
 				if(!Eml.test(EVl)){
@@ -153,7 +165,7 @@
 				// console.log($hobbies)
 
 					//介绍
-				
+				// textCounter();
 
 					//爱好
 				$.each($hobbies,function(i,itme){
@@ -166,9 +178,24 @@
 		            alert('至少选择一个爱好！');
 		             return false;
 		        }
-
 			 // return false;
 		}
+
+		function textCounter(field,countF,maxnub){
+							//表单，文本元素，限制数
+					if($.trim(field.value.length==0)){
+						alert('请输入介绍!');
+						// field.focus();
+						return false;
+					} else if(field.value.length>maxnub){ //字数大于最大按最大
+								field.value=field.value.substring(0,maxnub);
+								alert('最多只能输50个字！');
+
+					} else {
+						countF.value=maxnub-field.value.length;//小于限制就显示剩余
+						return false;
+					}
+				}
 	</script>
 </body>
 </html>
