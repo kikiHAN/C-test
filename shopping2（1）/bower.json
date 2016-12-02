@@ -1,0 +1,24 @@
+{
+  "name": "shopping2",
+  "homepage": "https://github.com/kikiHAN/C-test",
+  "authors": [
+    "hanqiki <hanqiki@163.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "js/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "layer": "*"
+  }
+}

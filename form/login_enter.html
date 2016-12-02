@@ -14,13 +14,17 @@
 		body {
 			background-color:#fff;
 		}
+
+		.h500 {
+            height: 500px;
+        }
 	</style>
 </head>
 <body>
   <!-- //表单验证：非空验证、长足验证、格式验证 -->
     <!-- 表单验证:1)阻止表单提交2验证表单是否为空,账号中不能有空格。表单中有action属性，是把表单提交到php中，有action是提交到后面属性中的php，没有就提交到当前页面。method是表单提交的方式提交的接口地址，后台写post则写post，后台写get则写get。一般会有接口文档。onsubmit=return false阻止表单提交 -->
 
-<div class="container">
+<div class="container h500">
 	<div class="row">
 		<div class="form-wp">
 			<h1>用户登录</h1>
@@ -37,8 +41,8 @@
 					</label>
 				</div>
 				<div>
-					<label for="">验证码：
-						<input id="" name="vcode" type="text">
+					<label>验证码：
+						<input id="vcode" name="vcode" type="text">
 					</label>
 					<img title="点击刷新" src="vcode/captcha.php" align="absbottom" onclick="this.src='vcode/captcha.php?'+Math.random();">
 				</div>
@@ -46,6 +50,7 @@
 					<!-- <input type="button" id="register" name="" value="注册"> -->
 					<input id="loginBtn" type="submit" value="登录">
 					<input id="reset" type="reset" value="清空">
+					<input id="btn" type="button" value="返回">
 				</div>
 
 
@@ -54,13 +59,22 @@
 	</div>
 </div>
 
-	<script src="../js/lib/jquery/dist/jquery.min.js"></script>
-	<script src="../js/lib/dist/js/bootstrap.min.js"></script>
-	<script>
+<script src="../js/lib/jquery/dist/jquery.min.js"></script>
+<script src="../js/lib/dist/js/bootstrap.min.js"></script>
+<script>
 
-	function checkForm(){
+
+!function(window, document, $, undefined){
+
+	var $btn = $('#btn');
+
+	window.checkForm = checkForm;
+
+	function checkForm() {
+		
 		var $username=$('#username'),
-			$password=$('#password')
+			$password=$('#password'),
+			$vcode = $('#vcode'),
 			$loginBtn=$("#loginBtn"),
 			$reset=$('#reset');
 
@@ -76,16 +90,61 @@
 		 		return false;
 			}
 
-		// $loginBtn.on('click',function(){
-		// 	location.href = "main.html"
-		// })
+			if($vcode.val()==''){
+				alert('请输入验证码');
+		 		$vcode.focus();
+		 		return false;
+			}
+
 
 		// $reset.on('click',function(){
 		// 	$username.focus();
 		// })
 
+	};
+
+
+	$btn.on('click',function(){
+			location.href = "main1.html"
+	});
+
+}(window, document, jQuery);
+////////////////////////////////////
+	/*var tt;
+	function test(){
+		var t = 8;
+		// window.tt=t;//tt=8
+		tt = t;
 	}
-	</script>
+
+	test();
+	console.log(tt)8*/
+
+	
+	/*function test(){
+		var t = 8;
+		return t;
+	}
+
+	var tt = test();
+	console.log(tt)//8*/
+	
+
+	/*function test(){
+		var t = 7;
+		return function(){
+			// console.log(t)//7
+			return t;
+		}
+	}
+	var tt = test();
+
+	// console.log(tt())//undefined 先与136行出来
+
+	// console.log(tt)//函数
+	console.log(tt())*/
+
+</script>
 
 	<!-- <h1>用户登录</h1>
 	<hr>

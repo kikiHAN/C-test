@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+<div id="canvas" width="150" height="150">1234</div>
+
+
+
+<script>
+    var canvas = document.getElementById("canvas");
+// console.log(canvas)
+
+if(canvas.getContext){
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "rgb(255,0,0)";
+    ctx.fillRect = (10,10,100,100);
+}else {
+    console.log(123)
+}
+
+
+</script>
+
+</body>
+</html>

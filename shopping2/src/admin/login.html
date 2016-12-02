@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="form-wp">
+            <h2>用户注册</h2>
+            <hr>  
+            <form class="form"  method="post" action="../../api/user_reg.php" onsubmit="return checkForm();">
+                <div class="txt-wp">
+                    <label>用户名：
+                        <input id="username" name="username" type="text" >
+                        <!-- onkeyup="value=value.replace(/[^\w\.]/g,'')" -->
+                    </label>
+                </div>
+                <div class="txt-wp">
+                    <label>真实姓名：
+                        <input id="realname" name="realname" type="text" >
+                        <!-- onkeyup="value=value.replace(/[^\w\.]/g,'')" -->
+                    </label>
+                </div>
+                <div class="txt-wp" >
+                    <label for="password">密码：
+                        <input id="password" name="password" type="password">
+                    </label>
+                </div>
+                <div class="txt-wp">
+                    <label for="email">邮箱：
+                        <input id="email" name="email" type="text">
+                    </label>
+                </div>
+               <div class="txt-wp">
+                    <label for="email">手机：
+                        <input id="mobile" name="mobile" type="text">
+                    </label>
+                </div>
+                <div>
+                    <input id="loBtn" type="submit" value="立即注册">
+                    <input id="return" type="submit" value="返回">
+                </div>
+                <div class="txt-wp"></div>
+            </form>
+        </div>
+    </div>
+</div>
+    <script src="../../js/lib/jquery/dist/jquery.min.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>

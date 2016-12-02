@@ -17,23 +17,24 @@
 			<form class="form"  method="post" action="../api/reg_login_insert.php" onsubmit="return checkForm();">
 				<div class="txt-wp">
 					<label>账号：
-						<input id="username" name="username" type="text" onkeyup="value=value.replace(/[^\w\.]/g,'')">
+						<input id="username" name="username" type="text" >
+						<!-- onkeyup="value=value.replace(/[^\w\.]/g,'')" -->
 					</label>
 				</div>
 				<div class="txt-wp" >
-					<label for="">密码：
+					<label for="password">密码：
 						<input id="password" name="password" type="password">
 					</label>
 				</div>
 				<div class="txt-wp">
-					<label for="">邮箱：
+					<label for="email">邮箱：
 						<input id="email" name="email" type="text">
 					</label>
 				</div>
 				<div class="txt-wp" id="gender">
 					<label> 性别：
-						<input  name="gender" type="radio" value="男"><label>男</label>
-						<input  name="gender" type="radio" value="女" checked><label>女</label>
+						<label><input  name="gender" type="radio" value="男">男</label>
+						<label><input  name="gender" type="radio" value="女" checked>女</label><!-- 若没有value值页面显示为on -->
 					</label>
 				</div>
 				<div class="txt-wp">
@@ -51,7 +52,7 @@
 					<div class="">
 						<label>介绍：</label>
 					</div>
-					<div>
+					<div class="textarea">
 						<textarea id="desc" name="desc"  cols="30" rows="10"  onKeyDown="textCounter(desc,nublen,50);" onKeyUp="textCounter(desc,nublen,50);"></textarea>
 						<span id="length">已输入
 							<input id="num" name="nublen" type="text"  value="0" size="0" readonly="readonly">/50个字
@@ -94,6 +95,11 @@
 			location.href="main1.html"
 			return false;
 		})
+		    //禁止汉字特殊字符输入
+		$('#username').on('keyup',function(){  //或写keyup事件
+			// console.log(this)
+			this.value=this.value.replace(/[^\w\.]/g,'');
+		})
 
 
 		/*$('#loBtn').on('click',function(){
@@ -135,6 +141,7 @@
 			 		return false;
 
 				} else if(!nubhun.test(username)){
+					
 					alert('请输入以字母开的6~10位字母数字组合');
 					$username.focus();
 					return false;
@@ -191,6 +198,11 @@
 				}/**/
 
 			
+
+			/*function test(){
+				console.log(this);//window
+			}
+			test();*/
 	</script>
 </body>
 </html>

@@ -75,7 +75,7 @@
         <ul>
             <li>
                 <label>auto：
-                <input type="text" class="writebox auto"  readonly="readonly"  autocomplete="off" />
+                <input type="text" class="writebox auto"  readonly="readonly"  autocomplete="off"/><!-- 不可键入 -->
                 </label>
             </li>
             <li>
@@ -90,16 +90,42 @@
             </li>
             <li>
                 <label>inactive：
-                    <input type="text" class="writebox inactive" onkeydown="return false;" />
+                    <input type="text" class="writebox inactive" onkeydown="return false;" /><!-- 只能输入特殊字符数字，汉字禁止不可复制粘贴 -->
                 </label>
             </li>
             <li>
                 <label>disabled：
-                    <input type="text" class="writebox disabled" onkeyup="value=value.replace(/[^\w\.]/g,'')" />
+                    <input id="test2" type="text" class="writebox disabled" /><!-- 只输字母数字 -->
+                    <!-- onkeyup="value=value.replace(/[^\w\.]/g,'')"  -->
                 </label>
             </li>
         </ul>
     </fieldset>
 </form>
+
+        
+
+
+
+    <script src="../js/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    // var test=document.getElementById('test2');
+    //     test.onkeyup = function(){
+    //         console.log(this)
+    //         // console.log(test)
+    //         this.value=this.value.replace(/[^\w\.]/g,'');
+    //     }
+
+    var $test = $('#test2');
+        $test.keyup(function(){
+            console.log(this)
+            this.value=this.value.replace(/[^\w\.]/g,'');
+            
+        })
+
+
+</script>
+
 </body>
+
 </html>

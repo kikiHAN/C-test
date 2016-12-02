@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table,th,td {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>邮箱</th>
+        </tr>
+        <!-- <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr> -->
+
+    </table>
+
+    <script src="../js/lib/jquery/dist/jquery.min.js"></script>
+    <script>
+
+        "user strict";
+      $.get('data.txt' , function(response){
+            var obj = $.parseJSON(response);
+            // console.log(obj)
+            // console.log(obj.list.data)
+            
+            initTab(obj.list.data);
+        });  /**/
+
+
+        var initTab = function( data ){
+            var trArr = [];
+            // console.log(data)
+            $.each(data, function( index, obj){
+                trArr.push(
+                    '<tr>',
+                        '<td>', index+1,'</td>',
+                        '<td>', obj.name, '</td>',
+                        '<td>', obj.age, '</td>',
+                        '<td>', obj.email, '</td>',
+                    '</tr>'
+                    );
+            });
+
+            console.log(trArr);
+
+           $('table').append(trArr.join(''));
+        };
+
+
+    </script>
+</body>
+</html>
