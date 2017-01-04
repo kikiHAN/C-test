@@ -150,8 +150,8 @@ body {
   margin-bottom:20px;
 }
 
-.ml-50 {
-  margin-right: :-20px !important;
+.mr-50 {
+  margin-right: :50px ;
 }
 
 .ml-10 {
@@ -188,12 +188,8 @@ body {
 }
 
 table { 
-  table-layout:fixed;
+table-layout:fixed; 
 } 
-
-.table {
-  margin: 20px 0 10px 0 !important;
-}
 
 .bg-red {
   background-color: red;
@@ -224,9 +220,9 @@ table {
   background-color: red;
 }*/
 
-.ds-no {
+/*.ds-no {
   display: none;
-}
+}*/
 
 .span-abs {
     width: 110px;
@@ -234,5 +230,33 @@ table {
     position: absolute;
     color: red;
 }
+
+.loading-wp .masker {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 998;
+  background-color: #fff;
+  opacity: 0.2;
+}
+
+.loading-wp .loading {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  margin :-16px 0 0 -16px;
+  z-index: 999;
+  background-image: url(../../img/loading.gif);
+}
+
+.mr-3 {
+  margin-right: 3px;
+}
+
+
 
 
